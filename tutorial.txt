@@ -52,8 +52,35 @@ Gerar token GitHub
 3) Token classic
 4) Gerar o token selecionando tudo, guardar o token
 
+________________________________________________________
+Boas praticas ba programação
+1) Cabeçalho de documentação
+/**
+    nome do projeto
+    Descrição da classe/função
+    @author Thiago nascimento
+    @version 1.0
+*/
+________________________________________________________
+Node- Plataforma que permite a execução  do JavaScript 
+fora do navegador (browser)
+https://nodejs.org/pt (sempre baixar a versão LTS)
 
+comandoos basicos:
+ node -v (versao do node)
 
+Gerenciador de pacote para o node 
+npm está relacionado a pasta do projeto ou seja
+ os pacotes são instalados na raiz do projeto e 
+ não no sistema operacional.
+
+npm -v (versao do npm)
+npm ls (listar pacotes instalados)
+
+npm init (iniciar um novo projeto JavaScript)
+|___ package.json
+
+json (JavaScript Objetc Notation)
 
 
 
