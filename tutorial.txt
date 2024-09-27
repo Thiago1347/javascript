@@ -124,6 +124,9 @@ npm ls (listar pacotes instalados)
 npm init (iniciar um novo projeto JavaScript)
 |___ package.json
 
+npm i nome_do pacote(instala um novo pacote)
+npm r nome_do pacote (remove um pacote)
+
 json (JavaScript Objetc Notation)
 
 _______________________________________________________
