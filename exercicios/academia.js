@@ -1,35 +1,58 @@
 /**
- * Ficha de um aluno de academia 
+ * APP - Calculadora saude
  * @author Thiago Nascimento
  */
 
-//variaveis 
-let nome 
+//Bibliotecas
+const input = require(`readline-sync`)
+const colors = require(`colors`)
+
+// variaveis 
+let nome
 let idade
 let peso
 let altura
-let vip 
 let fcm
-let imc 
-// entrada de dados
-console.clear()
-nome = "Thiago Nascimento"
-idade = 19
-peso = 65
-altura = 1.72
-vip = true
+let imc
+let consumo
 
-//processamento
-fcm = 208 - (0.7 * idade)
+//entrada de dados
+nome = "digite o seu nomme: "
+idade = Number(input.question("digite sua idade: "))
+peso = Number(input.question("digite seu peso em kg: "))
+altura = Number(input.question("digite sua altura em metros: "))
+
+// processamento
+fmc = 208 -(0.7 * idade)
 imc = peso / (altura * altura)
+consumo = peso * 0.035
 
 // saida
 console.log("ficha do aluno")
-console.log("_______________________")
-console.log(`nome:${nome}`)
+console.log("______________________")
+console.log(`nome: ${nome}`)
 console.log(`idade: ${idade}`)
 console.log(`peso: ${peso}`)
 console.log(`altura: ${altura}`)
-console.log(`Vip: ${vip}`)
 console.log(`FCM: ${fcm}`)
-console.log(`ICM: ${imc.toFixed(2)}`)
+console.log(`imc: ${imc.toFixed(2)}`)
+
+// tabela imc
+if (imc < 18.5) {
+    console.log("abaixo do peso".cyan)
+ } else if (imc < 25) {
+console.log("peso normal".green)
+ } else if (imc < 30) {
+console.log ("levemente acima do peso".yellow)
+ } else if (imc < 35) {
+    console.log("obesidade grau I".magenta)
+ } else if (imc < 40) {
+    console.log("obesidade gra II".red)
+ } else {
+    console.log("obesidade grau III".bgRed)
+ }
+
+ //consumno de agua
+ console.log(`consumir por dia ${consumo.toFixed(3)} litros de agua: `)
+ 
+ 

@@ -186,3 +186,15 @@ if (condicao) {
 Observações:
 1 ) Uma condição nunca pode ser verdadeira e falsa ao mesmo tempo.
 2 ) No uso de if-else sempre uma das condições sera processada.
+
+switch (variavel) {
+    case:1:
+    // codigo caso o valor da variavel seja 1 
+    break
+    case: 2:
+    // codigo caso o valor da variavel seja 2
+    break 
+    default:
+    //opcional, o codigo sera executado se nenhum caso for definido
+    break
+}
