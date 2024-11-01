@@ -63,6 +63,7 @@ do {console.clear()
         console.log("computador venceu ")
     }
     
-} while  (opcao = input.question("Deseja Jogar Novamente(s/n) ") )
+} 
+while  (opcao = input.question("Deseja jogar Novamente(s/n) ") )
 
 
