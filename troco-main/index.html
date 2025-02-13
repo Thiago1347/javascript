@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Troco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Cálculo do Troco</h2>
+
+        <label for="total">Total da Compra: R$</label>
+        <input type="number" id="total" placeholder="Digite o valor total" step="0.01" required>
+        <br><br>
+
+        <label for="valorPago">Valor Pago: R$</label>
+        <input type="number" id="valorPago" placeholder="Digite o valor pago" step="0.01" required>
+        <br><br>
+
+        <button onclick="calcularTroco()">Calcular Troco</button>
+
+        <!-- Caixa de resultado -->
+        <div id="resultado" style="margin-top: 20px; padding: 10px; background-color: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <strong>Resultado: </strong><span id="troco"></span>
+        </div>
+    </div>
+
+    <script>
+        function calcularTroco() {
+            const total = parseFloat(document.getElementById('total').value);
+            const valorPago = parseFloat(document.getElementById('valorPago').value);
+
+            // Verificar se os campos foram preenchidos corretamente
+            if (isNaN(total) || isNaN(valorPago) || total <= 0 || valorPago <= 0) {
+                document.getElementById('resultado').style.display = 'none'; // Esconde a caixa de resultado
+                document.getElementById('troco').textContent = ''; // Limpa o valor do troco
+                alert("Por favor, insira valores válidos para o total e o valor pago.");
+                return;
+            }
+
+            // Calcular o troco
+            const troco = valorPago - total;
+
+            // Se o troco for negativo, exibir a dívida
+            if (troco < 0) {
+                document.getElementById('troco').textContent = `Você ainda deve: R$ ${Math.abs(troco).toFixed(2)}`;
+            } else {
+                // Exibir o troco normal
+                document.getElementById('troco').textContent = `O valor do troco é: R$ ${troco.toFixed(2)}`;
+            }
+
+            // Exibir a caixa de resultado
+            document.getElementById('resultado').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
